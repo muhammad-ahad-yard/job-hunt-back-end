@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: Job-Hunt
+  mongodb:
+    uri: mongodb://localhost:27017/jobHunt
+    auto-index-creation: true

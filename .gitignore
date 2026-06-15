@@ -1,0 +1,60 @@
+### Help.md ###
+.help.html
+
+### Target (Maven Build Output) ###
+target/
+*.egg-info/
+
+### Gradle Build Output ###
+build/
+.gradle/
+/out/
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/resources/archetype-resources/src/main/java/**/*.properties
+
+### Eclipse ###
+.metadata
+.classpath
+.project
+.settings/
+*.launch
+.factorypath
+
+### VS Code ###
+.vscode/
+
+### Operating System Files ###
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+### Log Files ###
+*.log
+logs/
+
+### Crash dumps ###
+clear_cache.sh
+*.stackdump
+
+### Docker & Environment Configs ###
+.env
+.env.local
+docker-compose.override.yml
+
+### NetBeans ###
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
