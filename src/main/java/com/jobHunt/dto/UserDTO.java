@@ -1,7 +1,9 @@
 package com.jobHunt.dto;
 
 import com.jobHunt.entity.User;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,15 +13,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UserDTO {
 
-    private String id;
+    private Long id;
 
-    @NotBlank(message = "Name is null or blank")
+    @NotBlank(message = "{user.name.absent}")
     private String name;
 
-    @NotBlank(message = "Email is null or blank")
+    @Email(message = "{user.email.invalid}")
+    @NotBlank(message = "{user.email.absent}")
     private String email;
 
-    @NotBlank(message = "Password is null or blank")
+    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,15}$", message = "{user.password.invalid}")
+    @NotBlank(message = "{user.password.absent}")
     private String password;
 
     private AccountType accountType;
