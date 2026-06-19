@@ -1,5 +1,6 @@
 package com.jobHunt.controller;
 
+import com.jobHunt.dto.LoginDTO;
 import com.jobHunt.dto.UserDTO;
 import com.jobHunt.exception.JobHuntException;
 import com.jobHunt.service.UserService;
@@ -21,5 +22,10 @@ public class UserController {
     public ResponseEntity<UserDTO> registerUser(@Valid @RequestBody UserDTO userDTO) throws JobHuntException {
         userDTO = userService.registerUser(userDTO);
         return new ResponseEntity<>(userDTO, HttpStatus.CREATED);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<UserDTO> login(@RequestBody LoginDTO loginDTO) throws JobHuntException {
+        return new ResponseEntity<>(userService.loginUser(loginDTO), HttpStatus.OK);
     }
 }
